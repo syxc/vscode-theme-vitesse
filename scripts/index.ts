@@ -50,6 +50,16 @@ fs.mkdir('./themes', { recursive: true })
       { spaces: 2 },
     ),
     fs.writeJSON(
+      './themes/vitesse-black-soft.json',
+      getTheme({
+        color: 'dark',
+        name: 'Vitesse Black Soft',
+        black: true,
+        soft: true,
+      }),
+      { spaces: 2 },
+    ),
+    fs.writeJSON(
       './themes/vitesse-light-github.json',
       getTheme({
         color: 'light',

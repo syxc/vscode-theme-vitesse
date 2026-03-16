@@ -30,6 +30,12 @@ async function compareThemes() {
     'vitesse-light-github.json',
   ]
 
+  // Skip these keys for github theme (manual version has invalid values "9" and "a")
+  const skipKeysForGithub = new Set([
+    'editor.stackFrameHighlightBackground',
+    'editor.focusedStackFrameHighlightBackground',
+  ])
+
   console.log('='.repeat(80))
   console.log('📊 手动微调成品 (Git) vs 自动生成 (当前) 完整对比')
   console.log('='.repeat(80))
@@ -50,6 +56,10 @@ async function compareThemes() {
     const colorKeys = new Set([...Object.keys(manualColors), ...Object.keys(autoColors)])
 
     for (const key of colorKeys) {
+      // Skip invalid keys for github theme
+      if (theme === 'vitesse-light-github.json' && skipKeysForGithub.has(key)) {
+        continue
+      }
       if (manualColors[key] !== autoColors[key]) {
         diffs.push(`  ${key}: ${manualColors[key] || 'N/A'} → ${autoColors[key] || 'N/A'}`)
       }

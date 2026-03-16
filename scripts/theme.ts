@@ -20,13 +20,14 @@ export default function getTheme(options: GetThemeOptions) {
   } = createThemeHelpers(options)
   
   const foreground = githubColor?.foreground || v('foreground')
-  const secondaryForeground = githubColor?.secondary || v('secondaryForeground')
+  const secondaryForeground = githubColor?.secondary || (isBlack && isSoft ? VitesseThemes.blackSoftSecondaryForeground : v('secondaryForeground'))
   const activeForeground = githubColor?.iconActive || v('activeForeground')
   const primary = v('primary')
 
-  const border = githubColor?.border || v('border')
-  const background = githubColor?.background || v('background')
-  const activeBackground = githubColor?.activeBackground || v('activeBackground')
+  const border = githubColor?.border || (isBlack && isSoft ? VitesseThemes.blackSoftBorder : v('border'))
+  // Black Soft uses soft background (#1a1a1a), not pure black (#000)
+  const background = githubColor?.background || (isBlack && isSoft ? VitesseThemes.blackSoftBackground : (githubColor?.background || v('background')))
+  const activeBackground = githubColor?.activeBackground || (isBlack && isSoft ? VitesseThemes.blackSoftActiveBackground : v('activeBackground'))
   
   // Icon colors per theme type (manually fine-tuned)
   const iconActive = githubColor?.iconActive || (isBlack ? VitesseThemes.blackIconActive : (isLight ? VitesseThemes.lightIconActive : VitesseThemes.darkIconActive))
@@ -64,7 +65,7 @@ export default function getTheme(options: GetThemeOptions) {
       'button.hoverBackground': primary,
 
       'checkbox.background': activeBackground,
-      'checkbox.border': pick({ light: colors.gray[3], dark: colors.gray[1] }),
+      'checkbox.border': isBlack && isSoft ? VitesseThemes.blackSoftCheckboxBorder : pick({ light: colors.gray[3], dark: colors.gray[1] }),
 
       'dropdown.background': background,
       'dropdown.border': border,
@@ -74,8 +75,8 @@ export default function getTheme(options: GetThemeOptions) {
       'input.background': activeBackground,
       'input.border': border,
       'input.foreground': foreground,
-      'input.placeholderForeground': secondaryForeground,
-      'inputOption.activeBackground': v('ignored'),
+      'input.placeholderForeground': isBlack && isSoft ? VitesseThemes.blackSoftPlaceholderForeground : secondaryForeground,
+      'inputOption.activeBackground': isBlack && isSoft ? VitesseThemes.blackSoftInputOptionActiveBackground : v('ignored'),
 
       'badge.foreground': background,
       'badge.background': secondaryForeground,
@@ -107,14 +108,14 @@ export default function getTheme(options: GetThemeOptions) {
       'list.hoverForeground': foreground,
       'list.inactiveSelectionForeground': foreground,
       'list.activeSelectionForeground': foreground,
-      'list.hoverBackground': activeBackground,
-      'list.inactiveSelectionBackground': activeBackground,
-      'list.activeSelectionBackground': activeBackground,
+      'list.hoverBackground': isBlack && isSoft ? VitesseThemes.blackSoftListHoverBackground : activeBackground,
+      'list.inactiveSelectionBackground': isBlack && isSoft ? VitesseThemes.blackSoftListInactiveSelectionBackground : activeBackground,
+      'list.activeSelectionBackground': isBlack && isSoft ? VitesseThemes.blackSoftListActiveSelectionBackground : activeBackground,
       'list.inactiveFocusBackground': background,
-      'list.focusBackground': activeBackground,
+      'list.focusBackground': isBlack && isSoft ? VitesseThemes.blackSoftListFocusBackground : activeBackground,
       'list.highlightForeground': primary,
 
-      'tree.indentGuidesStroke': pick({ light: colors.gray[2], dark: colors.gray[1] }),
+      'tree.indentGuidesStroke': isBlack && isSoft ? VitesseThemes.blackSoftTreeIndentGuidesStroke : pick({ light: colors.gray[2], dark: colors.gray[1] }),
 
       'notificationCenterHeader.foreground': colors.gray[5],
       'notificationCenterHeader.background': background,
@@ -144,16 +145,16 @@ export default function getTheme(options: GetThemeOptions) {
       'editorGroup.border': border,
 
       'tab.activeForeground': foreground,
-      'tab.inactiveForeground': iconInactive,
-      'tab.inactiveBackground': background,
+      'tab.inactiveForeground': isBlack && isSoft ? VitesseThemes.blackSoftTabInactiveForeground : iconInactive,
+      'tab.inactiveBackground': isBlack && isSoft ? VitesseThemes.blackSoftTabInactiveBackground : background,
       'tab.activeBackground': background,
-      'tab.hoverBackground': activeBackground,
-      'tab.unfocusedHoverBackground': background,
+      'tab.hoverBackground': isBlack && isSoft ? VitesseThemes.blackSoftTabHoverBackground : activeBackground,
+      'tab.unfocusedHoverBackground': isBlack && isSoft ? VitesseThemes.blackSoftTabInactiveBackground : background,
       'tab.border': border,
       'tab.unfocusedActiveBorderTop': border,
       'tab.activeBorder': border,
       'tab.unfocusedActiveBorder': border,
-      'tab.activeBorderTop': selectionLine,
+      'tab.activeBorderTop': isBlack && isSoft ? VitesseThemes.blackSoftTabActiveBorderTop : selectionLine,
 
       'breadcrumb.foreground': colors.gray[5],
       'breadcrumb.focusForeground': foreground,
@@ -164,57 +165,58 @@ export default function getTheme(options: GetThemeOptions) {
       'editor.foreground': foreground,
       'editor.background': background,
       'editorWidget.background': background,
-      'editor.foldBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
-      'editor.lineHighlightBackground': activeBackground,
+      'editor.foldBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorFoldBackground : pick({ light: '#22222210', dark: '#eeeeee10' }),
+      'editor.lineHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorLineHighlightBackground : activeBackground,
       'editorLineNumber.foreground': lineNumber,
-      'editorLineNumber.activeForeground': activeForeground,
-      'editorIndentGuide.background': pick({ light: '#00000015', dark: '#ffffff15' }),
-      'editorIndentGuide.activeBackground': pick({ light: '#00000030', dark: '#ffffff30' }),
-      'editorWhitespace.foreground': pick({ light: '#00000015', dark: '#ffffff15' }),
+      'editorLineNumber.activeForeground': isBlack && isSoft ? VitesseThemes.blackSoftEditorLineNumberActiveForeground : activeForeground,
+      'editorIndentGuide.background': isBlack && isSoft ? VitesseThemes.blackSoftEditorIndentGuideBackground : pick({ light: '#00000015', dark: '#ffffff15' }),
+      'editorIndentGuide.activeBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorIndentGuideActiveBackground : pick({ light: '#00000030', dark: '#ffffff30' }),
+      'editorWhitespace.foreground': isBlack && isSoft ? VitesseThemes.blackSoftEditorWhitespaceForeground : pick({ light: '#00000015', dark: '#ffffff15' }),
       // 'editorCursor.foreground': primary,
 
-      'editor.findMatchBackground': pick({ light: '#e6cc7744', dark: '#e6cc7722' }),
-      'editor.findMatchHighlightBackground': pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
-      'editor.inactiveSelectionBackground': selectionBackgroundInActive,
-      'editor.selectionBackground': selectionBackground,
-      'editor.selectionHighlightBackground': selectionBackgroundInActive,
-      'editor.wordHighlightBackground': pick({ light: '#1c6b4805', dark: '#1c6b4805' }),
-      'editor.wordHighlightStrongBackground': pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
-      'editorBracketMatch.background': pick({ light: '#1c6b4820', dark: '#4d937520' }),
+      'editor.findMatchBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorFindMatchBackground : pick({ light: '#e6cc7744', dark: '#e6cc7722' }),
+      'editor.findMatchHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorFindMatchHighlightBackground : pick({ light: '#e6cc7766', dark: '#e6cc7744' }),
+      'editor.inactiveSelectionBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorInactiveSelectionBackground : selectionBackgroundInActive,
+      'editor.selectionBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorSelectionBackground : selectionBackground,
+      'editor.selectionHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorSelectionHighlightBackground : selectionBackgroundInActive,
+      'editor.wordHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorWordHighlightBackground : pick({ light: '#1c6b4805', dark: '#1c6b4805' }),
+      'editor.wordHighlightStrongBackground': isBlack && isSoft ? VitesseThemes.blackSoftEditorWordHighlightStrongBackground : pick({ light: '#1c6b4810', dark: '#1c6b4810' }),
+      'editorBracketMatch.background': isBlack && isSoft ? VitesseThemes.blackSoftEditorBracketMatchBackground : pick({ light: '#1c6b4820', dark: '#4d937520' }),
 
-      'diffEditor.insertedTextBackground': pick({ light: '#1c6b4830', dark: '#4d937550' }),
-      'diffEditor.removedTextBackground': pick({ light: '#ab595940', dark: '#ab595950' }),
+      'diffEditor.insertedTextBackground': isBlack && isSoft ? VitesseThemes.blackSoftDiffEditorInsertedTextBackground : pick({ light: '#1c6b4830', dark: '#4d937550' }),
+      'diffEditor.removedTextBackground': isBlack && isSoft ? VitesseThemes.blackSoftDiffEditorRemovedTextBackground : pick({ light: '#ab595940', dark: '#ab595950' }),
 
-      'scrollbar.shadow': pick({ light: '#6a737d33', dark: '#0000' }),
-      'scrollbarSlider.background': v('faded'),
-      'scrollbarSlider.hoverBackground': v('ignored'),
-      'scrollbarSlider.activeBackground': v('ignored'),
-      'editorOverviewRuler.border': colors.white,
+      'scrollbar.shadow': isBlack && isSoft ? VitesseThemes.blackSoftScrollbarShadow : pick({ light: '#6a737d33', dark: '#0000' }),
+      'scrollbarSlider.background': isBlack && isSoft ? VitesseThemes.blackSoftScrollbarBackground : v('faded'),
+      'scrollbarSlider.hoverBackground': isBlack && isSoft ? VitesseThemes.blackSoftScrollbarHoverBackground : v('ignored'),
+      'scrollbarSlider.activeBackground': isBlack && isSoft ? VitesseThemes.blackSoftScrollbarActiveBackground : v('ignored'),
+      'editorOverviewRuler.border': isBlack && isSoft ? VitesseThemes.blackSoftEditorOverviewRulerBorder : colors.white,
 
       'panel.background': background,
       'panel.border': border,
       'panelTitle.activeBorder': selectionLine,
       'panelTitle.activeForeground': foreground,
       'panelTitle.inactiveForeground': colors.gray[5],
-      'panelInput.border': pick({ light: colors.gray[2], dark: colors.gray[1] }),
+      'panelInput.border': isBlack && isSoft ? VitesseThemes.blackSoftPanelInputBorder : pick({ light: colors.gray[2], dark: colors.gray[1] }),
 
       'terminal.foreground': foreground,
-      'terminal.selectionBackground': selectionBackground,
-      'terminal.ansiBrightBlack': pick({ light: '#aaaaaa', dark: '#777777' }),
-      'terminal.ansiBrightBlue': v('blue'),
-      'terminal.ansiBrightCyan': v('cyan'),
-      'terminal.ansiBrightGreen': v('green'),
-      'terminal.ansiBrightMagenta': v('magenta'),
-      'terminal.ansiBrightRed': v('red'),
-      'terminal.ansiBrightWhite': pick({ light: '#dddddd', dark: '#ffffff' }),
-      'terminal.ansiBrightYellow': v('yellow'),
-      'terminal.ansiBlack': pick({ light: VitesseThemes.background[0], dark: VitesseThemes.foreground[1] }),
+      'terminal.selectionBackground': isBlack && isSoft ? VitesseThemes.blackSoftTerminalSelectionBackground : selectionBackground,
+      'terminal.ansiBrightBlack': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightBlack : pick({ light: '#aaaaaa', dark: '#777777' }),
+      'terminal.ansiBrightBlue': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightBlue : v('blue'),
+      'terminal.ansiBrightCyan': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightCyan : v('cyan'),
+      'terminal.ansiBrightGreen': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightGreen : v('green'),
+      'terminal.ansiBrightMagenta': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightMagenta : v('magenta'),
+      'terminal.ansiBrightRed': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightRed : v('red'),
+      'terminal.ansiBrightWhite': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightWhite : pick({ light: '#dddddd', dark: '#ffffff' }),
+      'terminal.ansiBrightYellow': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBrightYellow : v('yellow'),
+      'terminal.ansiBlack': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiBlack : pick({ light: VitesseThemes.background[0], dark: VitesseThemes.foreground[1] }),
       'terminal.ansiBlue': v('blue'),
       'terminal.ansiCyan': v('cyan'),
       'terminal.ansiGreen': v('green'),
       'terminal.ansiMagenta': v('magenta'),
       'terminal.ansiRed': v('red'),
-      'terminal.ansiWhite': '#dbd7ca',
+      'terminal.ansiWhite': isBlack && isSoft ? VitesseThemes.blackSoftTerminalAnsiWhite : '#dbd7ca',
+      'terminal.foreground': isBlack && isSoft ? VitesseThemes.blackSoftTerminalForeground : foreground,
       'terminal.ansiYellow': v('yellow'),
 
       'gitDecoration.addedResourceForeground': v('green'),
@@ -223,7 +225,7 @@ export default function getTheme(options: GetThemeOptions) {
       'gitDecoration.untrackedResourceForeground': v('cyan'),
       'gitDecoration.ignoredResourceForeground': ignoredFile,
       'gitDecoration.conflictingResourceForeground': v('orange'),
-      'gitDecoration.submoduleResourceForeground': v('secondaryForeground'),
+      'gitDecoration.submoduleResourceForeground': isBlack && isSoft ? VitesseThemes.blackSoftGitDecorationSubmoduleResourceForeground : v('secondaryForeground'),
 
       'editorGutter.modifiedBackground': v('blue'),
       'editorGutter.addedBackground': v('green'),
@@ -237,18 +239,18 @@ export default function getTheme(options: GetThemeOptions) {
       'editorBracketHighlight.foreground6': v('blue'),
 
       'debugToolBar.background': background,
-      'editor.stackFrameHighlightBackground': pick({ light: colors.yellow[1], dark: '#a707' }),
-      'editor.focusedStackFrameHighlightBackground': pick({ light: colors.yellow[2], dark: '#b808' }),
+      'editor.stackFrameHighlightBackground': isGithub ? VitesseThemes.githubEditorStackFrameHighlightBackground : (isBlack && isSoft ? VitesseThemes.blackSoftEditorStackFrameHighlightBackground : pick({ light: colors.yellow[1], dark: '#a707' })),
+      'editor.focusedStackFrameHighlightBackground': isGithub ? VitesseThemes.githubEditorFocusedStackFrameHighlightBackground : (isBlack && isSoft ? VitesseThemes.blackSoftEditorFocusedStackFrameHighlightBackground : pick({ light: colors.yellow[2], dark: '#b808' })),
 
-      'peekViewEditor.matchHighlightBackground': pick({ dark: '#ffd33d33', light: undefined }),
-      'peekViewResult.matchHighlightBackground': pick({ dark: '#ffd33d33', light: undefined }),
+      'peekViewEditor.matchHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftPeekViewEditorMatchHighlightBackground : pick({ dark: '#ffd33d33', light: undefined }),
+      'peekViewResult.matchHighlightBackground': isBlack && isSoft ? VitesseThemes.blackSoftPeekViewEditorMatchHighlightBackground : pick({ dark: '#ffd33d33', light: undefined }),
       'peekViewEditor.background': background,
       'peekViewResult.background': background,
 
       'settings.headerForeground': foreground,
       'settings.modifiedItemIndicator': primary,
-      'welcomePage.buttonBackground': colors.gray[1],
-      'welcomePage.buttonHoverBackground': colors.gray[2],
+      'welcomePage.buttonBackground': isBlack && isSoft ? VitesseThemes.blackSoftWelcomePageButtonBackground : colors.gray[1],
+      'welcomePage.buttonHoverBackground': isBlack && isSoft ? VitesseThemes.blackSoftWelcomePageButtonHoverBackground : colors.gray[2],
 
       'problemsErrorIcon.foreground': v('red'),
       'problemsWarningIcon.foreground': v('orange'),
@@ -259,14 +261,14 @@ export default function getTheme(options: GetThemeOptions) {
       'editorInfo.foreground': v('blue'),
       'editorHint.foreground': v('green'),
 
-      'editorGutter.commentRangeForeground': v('ignored'),
-      'editorGutter.foldingControlForeground': v('secondaryForeground'),
+      'editorGutter.commentRangeForeground': isBlack && isSoft ? VitesseThemes.blackSoftEditorGutterCommentRangeForeground : v('ignored'),
+      'editorGutter.foldingControlForeground': isBlack && isSoft ? VitesseThemes.blackSoftEditorGutterFoldingControlForeground : (isBlack ? VitesseThemes.darkEditorGutterFoldingControlForeground : (isLight ? VitesseThemes.lightEditorGutterFoldingControlForeground : VitesseThemes.darkEditorGutterFoldingControlForeground)),
 
-      'editorInlayHint.foreground': punctuation,
+      'editorInlayHint.foreground': isBlack && isSoft ? VitesseThemes.blackSoftEditorInlayHintForeground : punctuation,
       'editorInlayHint.background': activeBackground,
 
       'editorStickyScroll.background': activeBackground,
-      'editorStickyScrollHover.background': activeBackground,
+      'editorStickyScrollHover.background': isBlack && isSoft ? VitesseThemes.blackSoftEditorStickyScrollHoverBackground : activeBackground,
 
       'menu.separatorBackground': border,
     },
