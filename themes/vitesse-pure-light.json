@@ -1,7 +1,12 @@
 {
-  "name": "Vitesse Light",
+  "name": "Vitesse Pure Light",
   "base": "vs",
   "colors": {
+    "list.fontWeight": "500",
+    "tree.fontWeight": "500",
+    "activityBar.fontWeight": "500",
+    "statusBar.fontWeight": "500",
+    "tab.fontWeight": "500",
     "focusBorder": "#00000000",
     "foreground": "#1f2328",
     "descriptionForeground": "#59636e",
