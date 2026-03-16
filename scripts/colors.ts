@@ -165,27 +165,31 @@ export const VitesseThemes = {
   githubEditorStackFrameHighlightBackground: '#ffd33d26',
   githubEditorFocusedStackFrameHighlightBackground: '#ffd33d40',
   
-  // List selection/hover colors (for visual hierarchy)
-  // Light themes
-  lightListHoverBackground: '#f3f4f6',
-  lightListInactiveSelectionBackground: '#e8eaed',
-  lightListActiveSelectionBackground: '#dfe1e5',
-  // Dark themes
-  darkListHoverBackground: '#1a1a1a',
-  darkListInactiveSelectionBackground: '#202020',
-  darkListActiveSelectionBackground: '#262626',
-  // Black themes
-  blackListHoverBackground: '#0a0a0a',
-  blackListInactiveSelectionBackground: '#101010',
-  blackListActiveSelectionBackground: '#161616',
-  // Black Soft
-  blackSoftListHoverBackground: '#202020',
-  blackSoftListInactiveSelectionBackground: '#262626',
-  blackSoftListActiveSelectionBackground: '#2a2a2a',
-  // GitHub
-  githubListHoverBackground: '#f3f4f6',
-  githubListInactiveSelectionBackground: '#e8eaed',
-  githubListActiveSelectionBackground: '#dfe1e5',
+  // List selection/hover colors (from manual fine-tuning)
+  // Light themes - all same color
+  lightListHoverBackground: '#f7f7f7',
+  lightListInactiveSelectionBackground: '#f7f7f7',
+  lightListActiveSelectionBackground: '#f7f7f7',
+  // Light Soft themes
+  lightSoftListHoverBackground: '#E7E5DB',
+  lightSoftListInactiveSelectionBackground: '#E7E5DB',
+  lightSoftListActiveSelectionBackground: '#E7E5DB',
+  // Dark themes - all same color
+  darkListHoverBackground: '#181818',
+  darkListInactiveSelectionBackground: '#181818',
+  darkListActiveSelectionBackground: '#181818',
+  // Dark Soft themes
+  darkSoftListHoverBackground: '#292929',
+  darkSoftListInactiveSelectionBackground: '#292929',
+  darkSoftListActiveSelectionBackground: '#292929',
+  // Black themes - all same color
+  blackListHoverBackground: '#121212',
+  blackListInactiveSelectionBackground: '#121212',
+  blackListActiveSelectionBackground: '#121212',
+  // GitHub - all same color
+  githubListHoverBackground: '#f6f8fa',
+  githubListInactiveSelectionBackground: '#f6f8fa',
+  githubListActiveSelectionBackground: '#f6f8fa',
 } satisfies Record<string, [string, string] | string>
 
 // GitHub Light theme colors (from GitHub Primer)
