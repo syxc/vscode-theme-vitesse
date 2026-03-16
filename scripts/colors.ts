@@ -67,6 +67,34 @@ export const VitesseThemes = {
   orange: ['#d4976c', '#a65e2b'],
   yellow: ['#e6cc77', '#bda437'],
   magenta: ['#d9739f', '#a13865'],
+  
+  // UI colors for all themes (fine-tuned)
+  // Dark theme
+  darkIconActive: '#dbd7caee',
+  darkIconDefault: '#bfbaaa',
+  darkIconInactive: '#dedcd550',
+  darkLineNumber: '#dedcd550',
+  darkIgnoredFile: '#dedcd550',
+  darkSelectionLine: '#4d9375',
+  
+  // Light theme
+  lightIconActive: '#393a34',
+  lightIconDefault: '#4e4f47',
+  lightIconInactive: '#393a3450',
+  lightLineNumber: '#393a3450',
+  lightIgnoredFile: '#393a3450',
+  lightSelectionLine: '#1c6b48',
+  
+  // Black theme
+  blackIconActive: '#dbd7cacc',
+  blackIconDefault: '#bfbaaa',
+  blackIconInactive: '#dedcd550',
+  blackLineNumber: '#dedcd550',
+  blackIgnoredFile: '#dedcd550',
+  blackSelectionLine: '#4d9375',
+  
+  // Black Soft theme (special lineNumber)
+  blackSoftLineNumber: '#8b857560',
 } satisfies Record<string, [string, string] | string>
 
 // GitHub Light theme colors (from GitHub Primer)

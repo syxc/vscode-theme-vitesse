@@ -4,7 +4,13 @@ import { VitesseThemes, GitHubLightColors } from './colors'
 import { createThemeHelpers } from './helper'
 
 export default function getTheme(options: GetThemeOptions) {
+  // Determine theme type for UI colors
   const isGithub = options.github === true
+  const isDark = options.color === 'dark' && !options.black
+  const isLight = options.color === 'light'
+  const isBlack = options.black === true
+  const isSoft = options.soft === true
+  
   const githubColor = isGithub ? GitHubLightColors : null
   
   const {
@@ -21,6 +27,14 @@ export default function getTheme(options: GetThemeOptions) {
   const border = githubColor?.border || v('border')
   const background = githubColor?.background || v('background')
   const activeBackground = githubColor?.activeBackground || v('activeBackground')
+  
+  // Icon colors per theme type (manually fine-tuned)
+  const iconActive = githubColor?.iconActive || (isBlack ? VitesseThemes.blackIconActive : (isLight ? VitesseThemes.lightIconActive : VitesseThemes.darkIconActive))
+  const iconDefault = githubColor?.iconDefault || (isBlack ? VitesseThemes.blackIconDefault : (isLight ? VitesseThemes.lightIconDefault : VitesseThemes.darkIconDefault))
+  const iconInactive = githubColor?.iconInactive || (isBlack ? VitesseThemes.blackIconInactive : (isLight ? VitesseThemes.lightIconInactive : VitesseThemes.darkIconInactive))
+  const lineNumber = githubColor?.lineNumber || (isBlack && isSoft ? VitesseThemes.blackSoftLineNumber : (isBlack ? VitesseThemes.blackLineNumber : (isLight ? VitesseThemes.lightLineNumber : VitesseThemes.darkLineNumber)))
+  const ignoredFile = githubColor?.ignoredFile || (isBlack ? VitesseThemes.blackIgnoredFile : (isLight ? VitesseThemes.lightIgnoredFile : VitesseThemes.darkIgnoredFile))
+  const selectionLine = githubColor?.selectionLine || (isBlack ? VitesseThemes.blackSelectionLine : (isLight ? VitesseThemes.lightSelectionLine : VitesseThemes.darkSelectionLine))
 
   const punctuation = v('punctuation')
 
@@ -74,15 +88,15 @@ export default function getTheme(options: GetThemeOptions) {
       'titleBar.inactiveBackground': background,
       'titleBar.border': activeBackground,
 
-      'activityBar.foreground': githubColor?.iconActive || foreground,
-      'activityBar.inactiveForeground': githubColor?.iconInactive || v('ignored'),
+      'activityBar.foreground': iconActive,
+      'activityBar.inactiveForeground': iconInactive,
       'activityBar.background': background,
       'activityBarBadge.foreground': background,
       'activityBarBadge.background': activeForeground,
-      'activityBar.activeBorder': githubColor?.selectionLine || primary,
+      'activityBar.activeBorder': selectionLine,
       'activityBar.border': border,
 
-      'sideBar.foreground': githubColor?.iconDefault || activeForeground,
+      'sideBar.foreground': iconDefault,
       'sideBar.background': background,
       'sideBar.border': border,
       'sideBarTitle.foreground': foreground,
@@ -117,7 +131,7 @@ export default function getTheme(options: GetThemeOptions) {
       'quickInput.foreground': foreground,
       'quickInputList.focusBackground': activeBackground,
 
-      'statusBar.foreground': githubColor?.iconDefault || activeForeground,
+      'statusBar.foreground': iconDefault,
       'statusBar.background': background,
       'statusBar.border': border,
       'statusBar.noFolderBackground': background,
@@ -130,7 +144,7 @@ export default function getTheme(options: GetThemeOptions) {
       'editorGroup.border': border,
 
       'tab.activeForeground': foreground,
-      'tab.inactiveForeground': githubColor?.iconDefault || colors.gray[5],
+      'tab.inactiveForeground': iconInactive,
       'tab.inactiveBackground': background,
       'tab.activeBackground': background,
       'tab.hoverBackground': activeBackground,
@@ -139,7 +153,7 @@ export default function getTheme(options: GetThemeOptions) {
       'tab.unfocusedActiveBorderTop': border,
       'tab.activeBorder': border,
       'tab.unfocusedActiveBorder': border,
-      'tab.activeBorderTop': githubColor?.selectionLine || secondaryForeground,
+      'tab.activeBorderTop': selectionLine,
 
       'breadcrumb.foreground': colors.gray[5],
       'breadcrumb.focusForeground': foreground,
@@ -152,7 +166,7 @@ export default function getTheme(options: GetThemeOptions) {
       'editorWidget.background': background,
       'editor.foldBackground': pick({ light: '#22222210', dark: '#eeeeee10' }),
       'editor.lineHighlightBackground': activeBackground,
-      'editorLineNumber.foreground': githubColor?.lineNumber || v('ignored'),
+      'editorLineNumber.foreground': lineNumber,
       'editorLineNumber.activeForeground': activeForeground,
       'editorIndentGuide.background': pick({ light: '#00000015', dark: '#ffffff15' }),
       'editorIndentGuide.activeBackground': pick({ light: '#00000030', dark: '#ffffff30' }),
@@ -179,7 +193,7 @@ export default function getTheme(options: GetThemeOptions) {
 
       'panel.background': background,
       'panel.border': border,
-      'panelTitle.activeBorder': githubColor?.selectionLine || primary,
+      'panelTitle.activeBorder': selectionLine,
       'panelTitle.activeForeground': foreground,
       'panelTitle.inactiveForeground': colors.gray[5],
       'panelInput.border': pick({ light: colors.gray[2], dark: colors.gray[1] }),
@@ -207,7 +221,7 @@ export default function getTheme(options: GetThemeOptions) {
       'gitDecoration.modifiedResourceForeground': v('blue'),
       'gitDecoration.deletedResourceForeground': v('red'),
       'gitDecoration.untrackedResourceForeground': v('cyan'),
-      'gitDecoration.ignoredResourceForeground': githubColor?.ignoredFile || v('ignored'),
+      'gitDecoration.ignoredResourceForeground': ignoredFile,
       'gitDecoration.conflictingResourceForeground': v('orange'),
       'gitDecoration.submoduleResourceForeground': v('secondaryForeground'),
 
