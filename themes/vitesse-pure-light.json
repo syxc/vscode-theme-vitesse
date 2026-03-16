@@ -690,95 +690,95 @@
   "rules": [
     {
       "token": "comment",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "punctuation.definition.comment",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "string.comment",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "delimiter.bracket",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "delimiter",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "invalid.illegal.character-not-allowed-here.html",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.rest",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.spread",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.type.annotation",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.relational",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.assignment",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "keyword.operator.type",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.brace",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.tag.block.any.html",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.tag.inline.any.html",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.tag.structure.input.void.html",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.type.annotation",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.embedded.block.github-actions-expression",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "storage.type.function.arrow",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "meta.objectliteral.ts",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "punctuation",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "punctuation.definition.string.begin.html.vue",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "punctuation.definition.string.end.html.vue",
-      "foreground": "959da5"
+      "foreground": "8c959f"
     },
     {
       "token": "constant",
