@@ -71,7 +71,8 @@ export const VitesseThemes = {
 
 // GitHub Light theme colors (from GitHub Primer)
 export const GitHubLightColors = {
-  foreground: '#24292f',
+  // Core
+  foreground: '#1f2328',
   background: '#ffffff',
   activeBackground: '#f6f8fa',
   border: '#d1d9e0',
@@ -82,18 +83,28 @@ export const GitHubLightColors = {
   // gray scale (for compatibility)
   gray: ['#fafbfc', '#f6f8fa', '#e1e4e8', '#d1d9e0', '#959da5', '#6a737d', '#586069', '#444d56', '#2f363d', '#24292e'],
   
+  // Syntax highlighting (fine-grained)
   comment: '#6e7781',
   keyword: '#cf222e',
   string: '#0a3069',
   constant: '#0550ae',
   function: '#8250df',
   type: '#0550ae',
-  variable: '#24292f',
-  operator: '#24292f',
-  property: '#24292f',
+  variable: '#1f2328',
+  operator: '#1f2328',
+  property: '#1f2328',
   builtin: '#cf222e',
   namespace: '#953800',
   decorator: '#953800',
+  
+  // UI colors (optimized)
+  iconActive: '#484f58',
+  iconDefault: '#7d8590',
+  iconInactive: '#7d8590',
+  lineNumber: '#8c959f',
+  lineNumberActive: '#1f2328',
+  ignoredFile: '#959da5',
+  selectionLine: '#1a7f37',
   
   // colors
   green: '#1a7f37',
