@@ -203,7 +203,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#818b98"
+        "foreground": "#a0ada0"
       }
     },
     {
@@ -268,7 +268,7 @@
         "entity.name.function.decorator"
       ],
       "settings": {
-        "foreground": "#8250df"
+        "foreground": "#59873a"
       }
     },
     {
@@ -277,7 +277,7 @@
         "support.function.builtin"
       ],
       "settings": {
-        "foreground": "#8250df"
+        "foreground": "#59873a"
       }
     },
     {
@@ -290,7 +290,7 @@
         "entity.name.union"
       ],
       "settings": {
-        "foreground": "#0550ae"
+        "foreground": "#5a6aa6"
       }
     },
     {
@@ -300,7 +300,7 @@
         "support.type.builtin"
       ],
       "settings": {
-        "foreground": "#0550ae"
+        "foreground": "#5a6aa6"
       }
     },
     {
@@ -313,7 +313,7 @@
         "variable.other.member"
       ],
       "settings": {
-        "foreground": "#24292f"
+        "foreground": "#b07d48"
       }
     },
     {
@@ -322,7 +322,7 @@
         "variable.parameter.function"
       ],
       "settings": {
-        "foreground": "#24292f"
+        "foreground": "#b07d48"
       }
     },
     {
@@ -353,7 +353,7 @@
         "keyword.operator.comparison"
       ],
       "settings": {
-        "foreground": "#24292f"
+        "foreground": "#ab5959"
       }
     },
     {
@@ -362,7 +362,7 @@
         "variable.other.readwrite.alias"
       ],
       "settings": {
-        "foreground": "#953800"
+        "foreground": "#b05a78"
       }
     },
     {
@@ -371,7 +371,7 @@
         "entity.name.function.decorator"
       ],
       "settings": {
-        "foreground": "#953800"
+        "foreground": "#bd8f8f"
       }
     },
     {
@@ -380,7 +380,7 @@
         "entity.name.type.typeParameter"
       ],
       "settings": {
-        "foreground": "#953800"
+        "foreground": "#5a6aa6"
       }
     },
     {
@@ -388,7 +388,7 @@
         "support.type.property-name.json"
       ],
       "settings": {
-        "foreground": "#24292f"
+        "foreground": "#998418"
       }
     },
     {
@@ -397,7 +397,7 @@
         "entity.name.section.markdown"
       ],
       "settings": {
-        "foreground": "#0550ae"
+        "foreground": "#999999"
       }
     },
     {
