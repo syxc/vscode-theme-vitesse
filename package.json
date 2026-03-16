@@ -82,7 +82,8 @@
     "prepublishOnly": "npm run build",
     "release": "bumpp --all",
     "package": "vsce package --no-dependencies",
-    "verify": "tsx scripts/verify.ts"
+    "verify": "tsx scripts/verify.ts",
+    "compare": "tsx scripts/compare-with-manual.ts"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^5.2.1",
