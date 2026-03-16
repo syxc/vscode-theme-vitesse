@@ -194,7 +194,13 @@
     "peekView.border": "#d1d9e0",
     "minimap.background": "#ffffff",
     "diffEditor.border": "#d1d9e0",
-    "diffEditor.diagonalFill": "#d1d9e080"
+    "diffEditor.diagonalFill": "#d1d9e080",
+    "sash.hoverBorder": "#d1d9e0",
+    "editorGroup.dropBackground": "#0969da20",
+    "activityBarTop.foreground": "#7d8590",
+    "activityBarTop.inactiveForeground": "#959da5",
+    "chat.requestBackground": "#f6f8fa",
+    "chat.requestBorder": "#d1d9e0"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
