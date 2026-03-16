@@ -103,7 +103,7 @@
     "editorWidget.background": "#ffffff",
     "editor.foldBackground": "#0969da15",
     "editor.lineHighlightBackground": "#f3f4f6",
-    "editorLineNumber.foreground": "#8c959f",
+    "editorLineNumber.foreground": "#818b98",
     "editorLineNumber.activeForeground": "#1f2328",
     "editorIndentGuide.background": "#00000015",
     "editorIndentGuide.activeBackground": "#00000030",
@@ -203,7 +203,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#8c959f"
+        "foreground": "#818b98"
       }
     },
     {
@@ -230,7 +230,7 @@
         "punctuation.definition.string.end.html.vue"
       ],
       "settings": {
-        "foreground": "#8c959f"
+        "foreground": "#818b98"
       }
     },
     {
@@ -657,7 +657,7 @@
         "markup.underline.link.image.markdown"
       ],
       "settings": {
-        "foreground": "#8c959f",
+        "foreground": "#818b98",
         "fontStyle": "underline"
       }
     },
@@ -690,95 +690,95 @@
   "rules": [
     {
       "token": "comment",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "punctuation.definition.comment",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "string.comment",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "delimiter.bracket",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "delimiter",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "invalid.illegal.character-not-allowed-here.html",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.rest",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.spread",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.type.annotation",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.relational",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.assignment",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "keyword.operator.type",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.brace",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.tag.block.any.html",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.tag.inline.any.html",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.tag.structure.input.void.html",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.type.annotation",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.embedded.block.github-actions-expression",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "storage.type.function.arrow",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "meta.objectliteral.ts",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "punctuation",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "punctuation.definition.string.begin.html.vue",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "punctuation.definition.string.end.html.vue",
-      "foreground": "8c959f"
+      "foreground": "818b98"
     },
     {
       "token": "constant",
