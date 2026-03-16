@@ -53,9 +53,9 @@
         "path": "./themes/vitesse-black.json"
       },
       {
-        "label": "Vitesse GitHub",
+        "label": "Vitesse Light GitHub",
         "uiTheme": "vs",
-        "path": "./themes/vitesse-github.json"
+        "path": "./themes/vitesse-light-github.json"
       },
       {
         "label": "Vitesse Light Soft",
