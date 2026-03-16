@@ -1,14 +1,26 @@
 import type { GetThemeOptions } from './helper'
 import { toArray } from '@antfu/utils'
-import { VitesseThemes } from './colors'
+import { VitesseThemes, GitHubLightColors } from './colors'
 import { createThemeHelpers } from './helper'
 
 export default function getTheme(options: GetThemeOptions) {
+  const isGithub = options.github === true
+  
   const {
     pick,
     v,
     colors,
   } = createThemeHelpers(options)
+  
+  // GitHub theme uses specific UI colors
+  const githubUI = isGithub ? {
+    foreground: GitHubLightColors.foreground,
+    background: GitHubLightColors.background,
+    border: GitHubLightColors.border,
+    activeBackground: GitHubLightColors.activeBackground,
+    primary: GitHubLightColors.primary,
+    secondary: GitHubLightColors.secondary,
+  } : null
 
   const foreground = v('foreground')
   const secondaryForeground = v('secondaryForeground')
@@ -274,52 +286,121 @@ export default function getTheme(options: GetThemeOptions) {
       },
       {
         scope: [
-          'delimiter.bracket',
-          'delimiter',
-          'invalid.illegal.character-not-allowed-here.html',
-          'keyword.operator.rest',
-          'keyword.operator.spread',
-          'keyword.operator.type.annotation',
-          'keyword.operator.relational',
-          'keyword.operator.assignment',
-          'keyword.operator.type',
-          'meta.brace',
-          'meta.tag.block.any.html',
-          'meta.tag.inline.any.html',
-          'meta.tag.structure.input.void.html',
-          'meta.type.annotation',
-          'meta.embedded.block.github-actions-expression',
-          'storage.type.function.arrow',
-          'meta.objectliteral.ts',
-          'punctuation',
-          'punctuation.definition.string.begin.html.vue',
-          'punctuation.definition.string.end.html.vue',
+          'keyword.control',
+          'keyword.control.conditional',
+          'keyword.control.loop',
+          'keyword.control.trycatch',
+          'keyword.control.import',
+          'keyword.control.export',
         ],
         settings: {
-          foreground: punctuation,
+          foreground: v('keyword'),
+        },
+      },
+      {
+        scope: [
+          'storage',
+          'storage.type',
+          'storage.modifier',
+          'storage.class',
+          'storage.function',
+        ],
+        settings: {
+          foreground: v('builtin'),
         },
       },
       {
         scope: [
           'constant',
-          'entity.name.constant',
-          'variable.language',
-          'meta.definition.variable',
+          'constant.numeric',
+          'constant.boolean',
+          'constant.language',
+          'constant.character',
+          'constant.escape',
+          'constant.other',
         ],
         settings: {
           foreground: v('constant'),
         },
       },
       {
-        scope: ['entity', 'entity.name'],
+        scope: [
+          'string',
+          'string.quoted',
+          'string.quoted.double',
+          'string.quoted.single',
+          'string.template',
+          'string.interpolated',
+          'string.regexp',
+        ],
+        settings: {
+          foreground: v('string'),
+        },
+      },
+      {
+        scope: [
+          'entity.name.function',
+          'entity.name.function.member',
+          'entity.name.function.method',
+          'entity.name.function.constructor',
+          'entity.name.function.decorator',
+        ],
         settings: {
           foreground: v('function'),
         },
       },
       {
-        scope: 'variable.parameter.function',
+        scope: [
+          'support.function',
+          'support.function.builtin',
+        ],
         settings: {
-          foreground,
+          foreground: v('function'),
+        },
+      },
+      {
+        scope: [
+          'entity.name.type',
+          'entity.name.class',
+          'entity.name.interface',
+          'entity.name.enum',
+          'entity.name.struct',
+          'entity.name.union',
+        ],
+        settings: {
+          foreground: v('type'),
+        },
+      },
+      {
+        scope: [
+          'support.class',
+          'support.type',
+          'support.type.builtin',
+        ],
+        settings: {
+          foreground: v('type'),
+        },
+      },
+      {
+        scope: [
+          'variable',
+          'variable.other',
+          'variable.other.readwrite',
+          'variable.other.property',
+          'variable.other.object',
+          'variable.other.member',
+        ],
+        settings: {
+          foreground: v('variable'),
+        },
+      },
+      {
+        scope: [
+          'variable.parameter',
+          'variable.parameter.function',
+        ],
+        settings: {
+          foreground: v('variable'),
         },
       },
       {
@@ -332,415 +413,115 @@ export default function getTheme(options: GetThemeOptions) {
         },
       },
       {
-        scope: 'entity.name.function',
-        settings: {
-          foreground: v('function'),
-        },
-      },
-      {
-        scope: [
-          'keyword',
-          'storage.type.class.jsdoc',
-          'punctuation.definition.template-expression',
-        ],
-        settings: {
-          foreground: v('keyword'),
-        },
-      },
-      {
-        scope: [
-          'storage',
-          'storage.type',
-          'support.type.builtin',
-          'constant.language.undefined',
-          'constant.language.null',
-          'constant.language.import-export-all.ts',
-        ],
-        settings: {
-          foreground: v('builtin'),
-        },
-      },
-      {
-        scope: [
-          'text.html.derivative',
-          'storage.modifier.package',
-          'storage.modifier.import',
-          'storage.type.java',
-        ],
-        settings: {
-          foreground,
-        },
-      },
-      {
-        scope: [
-          'string',
-          'string punctuation.section.embedded source',
-          'attribute.value',
-        ],
-        settings: {
-          foreground: v('string'),
-        },
-      },
-      {
-        scope: [
-          'punctuation.definition.string',
-        ],
-        settings: {
-          foreground: v('string', '77'),
-        },
-      },
-      {
-        scope: [
-          'punctuation.support.type.property-name',
-        ],
-        settings: {
-          foreground: v('property', '77'),
-        },
-      },
-      {
-        scope: 'support',
-        settings: {
-          foreground: v('property'),
-        },
-      },
-      {
-        scope: [
-          'property',
-          'meta.property-name',
-          'meta.object-literal.key',
-          'entity.name.tag.yaml',
-          'attribute.name',
-        ],
-        settings: {
-          foreground: v('property'),
-        },
-      },
-      {
         scope: [
           'entity.other.attribute-name',
-          'invalid.deprecated.entity.other.attribute-name.html',
+          'entity.other.attribute-name.html',
         ],
         settings: {
           foreground: v('variable'),
-        },
-      },
-      {
-        scope: [
-          'variable',
-          'identifier',
-        ],
-        settings: {
-          foreground: v('variable'),
-        },
-      },
-      {
-        scope: [
-          'support.type.primitive',
-          'entity.name.type',
-        ],
-        settings: {
-          foreground: v('type'),
-        },
-      },
-      {
-        scope: 'namespace',
-        settings: {
-          foreground: v('namespace'),
         },
       },
       {
         scope: [
           'keyword.operator',
-          'keyword.operator.assignment.compound',
-          'meta.var.expr.ts',
+          'keyword.operator.assignment',
+          'keyword.operator.arithmetic',
+          'keyword.operator.logical',
+          'keyword.operator.bitwise',
+          'keyword.operator.comparison',
         ],
         settings: {
           foreground: v('operator'),
         },
       },
       {
-        scope: 'invalid.broken',
+        scope: [
+          'entity.name.namespace',
+          'variable.other.readwrite.alias',
+        ],
         settings: {
-          fontStyle: 'italic',
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: 'invalid.deprecated',
-        settings: {
-          fontStyle: 'italic',
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: 'invalid.illegal',
-        settings: {
-          fontStyle: 'italic',
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: 'invalid.unimplemented',
-        settings: {
-          fontStyle: 'italic',
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: 'carriage-return',
-        settings: {
-          fontStyle: 'italic underline',
-          background: pick({ light: colors.red[5], dark: colors.red[6] }),
-          foreground: colors.gray[0],
-          content: '^M',
-        },
-      },
-      {
-        scope: 'message.error',
-        settings: {
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: 'string variable',
-        settings: {
-          foreground: v('string'),
+          foreground: v('namespace'),
         },
       },
       {
         scope: [
-          'source.regexp',
-          'string.regexp',
+          'entity.name.decorator',
+          'entity.name.function.decorator',
         ],
         settings: {
-          foreground: v('regex'),
+          foreground: v('namespace'),
         },
       },
       {
         scope: [
-          'string.regexp.character-class',
-          'string.regexp constant.character.escape',
-          'string.regexp source.ruby.embedded',
-          'string.regexp string.regexp.arbitrary-repitition',
+          'entity.name.type.parameter',
+          'entity.name.type.typeParameter',
         ],
         settings: {
-          foreground: v('string'),
+          foreground: v('namespace'),
         },
       },
       {
-        scope: 'string.regexp constant.character.escape',
+        scope: [
+          'support.type.property-name.json',
+        ],
+        settings: {
+          foreground: v('variable'),
+        },
+      },
+      {
+        scope: [
+          'punctuation.definition.heading.markdown',
+          'entity.name.section.markdown',
+        ],
+        settings: {
+          foreground: v('type'),
+        },
+      },
+      {
+        scope: ['markup.bold.markdown'],
+        settings: {
+          fontStyle: 'bold',
+        },
+      },
+      {
+        scope: ['markup.italic.markdown'],
+        settings: {
+          fontStyle: 'italic',
+        },
+      },
+      {
+        scope: ['markup.inserted'],
+        settings: {
+          foreground: v('green'),
+        },
+      },
+      {
+        scope: ['markup.deleted'],
+        settings: {
+          foreground: v('red'),
+        },
+      },
+      {
+        scope: ['markup.changed'],
         settings: {
           foreground: v('yellow'),
         },
       },
       {
         scope: [
-          'support.constant',
+          'invalid',
+          'invalid.illegal',
+          'invalid.broken',
+          'invalid.deprecated',
+          'invalid.unimplemented',
         ],
         settings: {
-          foreground: v('constant'),
-        },
-      },
-      {
-        scope: [
-          'keyword.operator.quantifier.regexp',
-          'constant.numeric',
-          'number',
-        ],
-        settings: {
-          foreground: v('number'),
-        },
-      },
-      {
-        scope: [
-          'keyword.other.unit',
-        ],
-        settings: {
-          foreground: v('builtin'),
-        },
-      },
-      {
-        scope: [
-          'constant.language.boolean',
-          'constant.language',
-        ],
-        settings: {
-          foreground: v('boolean'),
-        },
-      },
-      {
-        scope: 'meta.module-reference',
-        settings: {
-          foreground: primary,
-        },
-      },
-      {
-        scope: 'punctuation.definition.list.begin.markdown',
-        settings: {
-          foreground: v('orange'),
-        },
-      },
-      {
-        scope: ['markup.heading', 'markup.heading entity.name'],
-        settings: {
-          fontStyle: 'bold',
-          foreground: primary,
-        },
-      },
-      {
-        scope: 'markup.quote',
-        settings: {
-          foreground: v('interface'),
-        },
-      },
-      {
-        scope: 'markup.italic',
-        settings: {
-          fontStyle: 'italic',
-          foreground,
-        },
-      },
-      {
-        scope: 'markup.bold',
-        settings: {
-          fontStyle: 'bold',
-          foreground,
-        },
-      },
-      {
-        scope: 'markup.raw',
-        settings: {
-          foreground: primary,
-        },
-      },
-      {
-        scope: [
-          'markup.deleted',
-          'meta.diff.header.from-file',
-          'punctuation.definition.deleted',
-        ],
-        settings: {
-          background: colors.red[0],
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: [
-          'markup.inserted',
-          'meta.diff.header.to-file',
-          'punctuation.definition.inserted',
-        ],
-        settings: {
-          background: colors.green[0],
-          foreground: colors.green[6],
-        },
-      },
-      {
-        scope: ['markup.changed', 'punctuation.definition.changed'],
-        settings: {
-          background: colors.orange[1],
-          foreground: colors.orange[6],
-        },
-      },
-      {
-        scope: ['markup.ignored', 'markup.untracked'],
-        settings: {
-          foreground: colors.gray[1],
-          background: colors.blue[6],
-        },
-      },
-      {
-        scope: 'meta.diff.range',
-        settings: {
-          foreground: pick({ light: colors.purple[5], dark: colors.purple[6] }),
-          fontStyle: 'bold',
-        },
-      },
-      {
-        scope: 'meta.diff.header',
-        settings: {
-          foreground: colors.blue[6],
-        },
-      },
-      {
-        scope: 'meta.separator',
-        settings: {
-          fontStyle: 'bold',
-          foreground: colors.blue[6],
-        },
-      },
-      {
-        scope: 'meta.output',
-        settings: {
-          foreground: colors.blue[6],
-        },
-      },
-      {
-        scope: [
-          'brackethighlighter.tag',
-          'brackethighlighter.curly',
-          'brackethighlighter.round',
-          'brackethighlighter.square',
-          'brackethighlighter.angle',
-          'brackethighlighter.quote',
-        ],
-        settings: {
-          foreground: colors.gray[6],
-        },
-      },
-      {
-        scope: 'brackethighlighter.unmatched',
-        settings: {
-          foreground: colors.red[7],
-        },
-      },
-      {
-        scope: [
-          'constant.other.reference.link',
-          'string.other.link',
-          'punctuation.definition.string.begin.markdown',
-          'punctuation.definition.string.end.markdown',
-        ],
-        settings: {
-          foreground: v('string'),
-        },
-      },
-      {
-        scope: [
-          'markup.underline.link.markdown',
-          'markup.underline.link.image.markdown',
-        ],
-        settings: {
-          foreground: secondaryForeground,
-          fontStyle: 'underline',
-        },
-      },
-      {
-        scope: [
-          'type.identifier',
-          'constant.other.character-class.regexp',
-        ],
-        settings: {
-          foreground: v('class'),
-        },
-      },
-      {
-        scope: [
-          'entity.other.attribute-name.html.vue',
-        ],
-        settings: {
-          foreground: v('function'),
-        },
-      },
-      {
-        scope: [
-          'invalid.illegal.unrecognized-tag.html',
-        ],
-        settings: {
-          fontStyle: 'normal',
+          foreground: v('red'),
         },
       },
     ],
+
     rules: [] as any[],
   }
 

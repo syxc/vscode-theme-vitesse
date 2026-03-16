@@ -68,3 +68,40 @@ export const VitesseThemes = {
   yellow: ['#e6cc77', '#bda437'],
   magenta: ['#d9739f', '#a13865'],
 } satisfies Record<string, [string, string] | string>
+
+// GitHub Light theme colors (from GitHub Primer)
+export const GitHubLightColors = {
+  foreground: '#24292f',
+  background: '#ffffff',
+  activeBackground: '#f6f8fa',
+  border: '#d1d9e0',
+  
+  primary: '#0969da',
+  secondary: '#59636e',
+  
+  // gray scale (for compatibility)
+  gray: ['#fafbfc', '#f6f8fa', '#e1e4e8', '#d1d9e0', '#959da5', '#6a737d', '#586069', '#444d56', '#2f363d', '#24292e'],
+  
+  comment: '#6e7781',
+  keyword: '#cf222e',
+  string: '#0a3069',
+  constant: '#0550ae',
+  function: '#8250df',
+  type: '#0550ae',
+  variable: '#24292f',
+  operator: '#24292f',
+  property: '#24292f',
+  builtin: '#cf222e',
+  namespace: '#953800',
+  decorator: '#953800',
+  
+  // colors
+  green: '#1a7f37',
+  cyan: '#0969da',
+  blue: '#0969da',
+  red: '#cf222e',
+  orange: '#9a6700',
+  yellow: '#9a6700',
+  magenta: '#8250df',
+}
+

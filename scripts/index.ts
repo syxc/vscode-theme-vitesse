@@ -49,6 +49,15 @@ fs.mkdir('./themes', { recursive: true })
       }),
       { spaces: 2 },
     ),
+    fs.writeJSON(
+      './themes/vitesse-light-github.json',
+      getTheme({
+        color: 'light',
+        name: 'Vitesse Light GitHub',
+        github: true,
+      }),
+      { spaces: 2 },
+    ),
   ]))
 
 fs.mkdir('./extra', { recursive: true })

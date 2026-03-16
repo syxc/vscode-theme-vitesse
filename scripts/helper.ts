@@ -1,10 +1,11 @@
-import { colors, VitesseThemes } from './colors'
+import { colors, VitesseThemes, GitHubLightColors } from './colors'
 
 export interface GetThemeOptions {
   color: 'light' | 'dark'
   name: string
   soft?: boolean
   black?: boolean
+  github?: boolean
 }
 
 function toArray<T>(arr: T | T[]): T[] {
@@ -38,10 +39,17 @@ function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1)
 }
 
-export function createThemeHelpers({ color, soft = false, black = false }: GetThemeOptions) {
+export function createThemeHelpers({ color, soft = false, black = false, github = false }: GetThemeOptions) {
   const pick = (options: { light?: string, dark?: string }) => options[color]
 
   const v = (key: keyof typeof VitesseThemes, op = '') => {
+    // GitHub theme uses GitHub Light colors directly
+    if (github && key in GitHubLightColors) {
+      const val = GitHubLightColors[key as keyof typeof GitHubLightColors]
+      if (typeof val === 'string')
+        return val + op
+    }
+    
     let obj = black
       ? VitesseThemes[`black${capitalize(key)}` as keyof typeof VitesseThemes] || VitesseThemes[key]
       : soft
@@ -54,11 +62,11 @@ export function createThemeHelpers({ color, soft = false, black = false }: GetTh
     return pick({ light: obj[1] + op, dark: obj[0] + op })
   }
 
-  const colors = getColors(color)
+  const themeColors = github ? GitHubLightColors : getColors(color)
 
   return {
     pick,
-    colors,
+    colors: themeColors,
     v,
   }
 }
