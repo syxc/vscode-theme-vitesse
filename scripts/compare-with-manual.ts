@@ -27,6 +27,7 @@ async function compareThemes() {
     'vitesse-dark-soft.json',
     'vitesse-black.json',
     'vitesse-black-soft.json',
+    'vitesse-light-github.json',
   ]
 
   console.log('='.repeat(80))
