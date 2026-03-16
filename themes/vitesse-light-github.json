@@ -131,7 +131,7 @@
     "panelTitle.inactiveForeground": "#59636e",
     "panelInput.border": "#e1e4e8",
     "terminal.foreground": "#1f2328",
-    "terminal.selectionBackground": "#0969da22",
+    "terminal.selectionBackground": "#1a7f3722",
     "terminal.ansiBrightBlack": "#59636e",
     "terminal.ansiBrightBlue": "#0969da",
     "terminal.ansiBrightCyan": "#0969da",
@@ -200,7 +200,13 @@
     "activityBarTop.foreground": "#7d8590",
     "activityBarTop.inactiveForeground": "#959da5",
     "chat.requestBackground": "#f6f8fa",
-    "chat.requestBorder": "#d1d9e0"
+    "chat.requestBorder": "#d1d9e0",
+    "editorWidget.border": "#d1d9e0",
+    "editorWidget.foreground": "#1f2328",
+    "editorWidget.resizeBorder": "#d1d9e0",
+    "notificationCenter.border": "#d1d9e0",
+    "dropdown.listBorder": "#d1d9e0",
+    "breadcrumb.border": "#d1d9e0"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
