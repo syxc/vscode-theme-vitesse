@@ -93,8 +93,9 @@ export const VitesseThemes = {
   blackIgnoredFile: '#dedcd550',
   blackSelectionLine: '#4d9375',
   
-  // Black Soft theme (special lineNumber)
+  // Black Soft theme (special colors)
   blackSoftLineNumber: '#8b857560',
+  blackSoftIgnoredFile: '#8b857560',
 } satisfies Record<string, [string, string] | string>
 
 // GitHub Light theme colors (from GitHub Primer)

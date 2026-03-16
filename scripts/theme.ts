@@ -33,7 +33,7 @@ export default function getTheme(options: GetThemeOptions) {
   const iconDefault = githubColor?.iconDefault || (isBlack ? VitesseThemes.blackIconDefault : (isLight ? VitesseThemes.lightIconDefault : VitesseThemes.darkIconDefault))
   const iconInactive = githubColor?.iconInactive || (isBlack ? VitesseThemes.blackIconInactive : (isLight ? VitesseThemes.lightIconInactive : VitesseThemes.darkIconInactive))
   const lineNumber = githubColor?.lineNumber || (isBlack && isSoft ? VitesseThemes.blackSoftLineNumber : (isBlack ? VitesseThemes.blackLineNumber : (isLight ? VitesseThemes.lightLineNumber : VitesseThemes.darkLineNumber)))
-  const ignoredFile = githubColor?.ignoredFile || (isBlack ? VitesseThemes.blackIgnoredFile : (isLight ? VitesseThemes.lightIgnoredFile : VitesseThemes.darkIgnoredFile))
+  const ignoredFile = githubColor?.ignoredFile || (isBlack && isSoft ? VitesseThemes.blackSoftIgnoredFile : (isBlack ? VitesseThemes.blackIgnoredFile : (isLight ? VitesseThemes.lightIgnoredFile : VitesseThemes.darkIgnoredFile)))
   const selectionLine = githubColor?.selectionLine || (isBlack ? VitesseThemes.blackSelectionLine : (isLight ? VitesseThemes.lightSelectionLine : VitesseThemes.darkSelectionLine))
 
   const punctuation = v('punctuation')
