@@ -203,7 +203,7 @@
         "string.comment"
       ],
       "settings": {
-        "foreground": "#59636e"
+        "foreground": "#8c959f"
       }
     },
     {
@@ -230,7 +230,7 @@
         "punctuation.definition.string.end.html.vue"
       ],
       "settings": {
-        "foreground": "#59636e"
+        "foreground": "#8c959f"
       }
     },
     {
@@ -657,7 +657,7 @@
         "markup.underline.link.image.markdown"
       ],
       "settings": {
-        "foreground": "#59636e",
+        "foreground": "#8c959f",
         "fontStyle": "underline"
       }
     },
