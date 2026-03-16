@@ -35,14 +35,14 @@
     "titleBar.inactiveForeground": "#59636e",
     "titleBar.inactiveBackground": "#ffffff",
     "titleBar.border": "#f6f8fa",
-    "activityBar.foreground": "#1f2328",
+    "activityBar.foreground": "#393a34",
     "activityBar.inactiveForeground": "#59636e",
     "activityBar.background": "#ffffff",
     "activityBarBadge.foreground": "#ffffff",
     "activityBarBadge.background": "#1f2328",
     "activityBar.activeBorder": "#1f883d",
     "activityBar.border": "#d1d9e0",
-    "sideBar.foreground": "#1f2328",
+    "sideBar.foreground": "#393a34",
     "sideBar.background": "#ffffff",
     "sideBar.border": "#d1d9e0",
     "sideBarTitle.foreground": "#1f2328",
@@ -71,7 +71,7 @@
     "pickerGroup.foreground": "#1f2328",
     "quickInput.background": "#ffffff",
     "quickInput.foreground": "#1f2328",
-    "quickInputList.focusBackground": "#f6f8fa",
+    "quickInputList.focusBackground": "#dfe1e5",
     "statusBar.foreground": "#1f2328",
     "statusBar.background": "#ffffff",
     "statusBar.border": "#d1d9e0",
@@ -103,7 +103,7 @@
     "editorWidget.background": "#ffffff",
     "editor.foldBackground": "#0969da15",
     "editor.lineHighlightBackground": "#f3f4f6",
-    "editorLineNumber.foreground": "#0969da30",
+    "editorLineNumber.foreground": "#6e7781",
     "editorLineNumber.activeForeground": "#1f2328",
     "editorIndentGuide.background": "#00000015",
     "editorIndentGuide.activeBackground": "#00000030",
@@ -690,95 +690,95 @@
   "rules": [
     {
       "token": "comment",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "punctuation.definition.comment",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "string.comment",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "delimiter.bracket",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "delimiter",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "invalid.illegal.character-not-allowed-here.html",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.rest",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.spread",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.type.annotation",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.relational",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.assignment",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "keyword.operator.type",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.brace",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.tag.block.any.html",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.tag.inline.any.html",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.tag.structure.input.void.html",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.type.annotation",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.embedded.block.github-actions-expression",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "storage.type.function.arrow",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "meta.objectliteral.ts",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "punctuation",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "punctuation.definition.string.begin.html.vue",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "punctuation.definition.string.end.html.vue",
-      "foreground": "59636e"
+      "foreground": "6e7781"
     },
     {
       "token": "constant",
