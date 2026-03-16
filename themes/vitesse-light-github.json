@@ -167,7 +167,7 @@
     "debugToolBar.background": "#ffffff",
     "editor.stackFrameHighlightBackground": "#fffbdd",
     "editor.focusedStackFrameHighlightBackground": "#fff5b1",
-    "peekViewEditor.background": "#ffffff",
+    "peekViewEditor.background": "#f6f8fa",
     "peekViewResult.background": "#ffffff",
     "settings.headerForeground": "#1f2328",
     "settings.modifiedItemIndicator": "#1f883d",
@@ -186,7 +186,15 @@
     "editorInlayHint.background": "#f6f8fa",
     "editorStickyScroll.background": "#f6f8fa",
     "editorStickyScrollHover.background": "#f6f8fa",
-    "menu.separatorBackground": "#d1d9e0"
+    "menu.separatorBackground": "#d1d9e0",
+    "editorHoverWidget.background": "#ffffff",
+    "editorHoverWidget.border": "#d1d9e0",
+    "editorHoverWidget.foreground": "#1f2328",
+    "peekViewTitle.background": "#ffffff",
+    "peekView.border": "#d1d9e0",
+    "minimap.background": "#ffffff",
+    "diffEditor.border": "#d1d9e0",
+    "diffEditor.diagonalFill": "#d1d9e080"
   },
   "semanticHighlighting": true,
   "semanticTokenColors": {
