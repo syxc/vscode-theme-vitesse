@@ -164,6 +164,28 @@ export const VitesseThemes = {
   // GitHub theme editor colors
   githubEditorStackFrameHighlightBackground: '#ffd33d26',
   githubEditorFocusedStackFrameHighlightBackground: '#ffd33d40',
+  
+  // List selection/hover colors (for visual hierarchy)
+  // Light themes
+  lightListHoverBackground: '#f3f4f6',
+  lightListInactiveSelectionBackground: '#e8eaed',
+  lightListActiveSelectionBackground: '#dfe1e5',
+  // Dark themes
+  darkListHoverBackground: '#1a1a1a',
+  darkListInactiveSelectionBackground: '#202020',
+  darkListActiveSelectionBackground: '#262626',
+  // Black themes
+  blackListHoverBackground: '#0a0a0a',
+  blackListInactiveSelectionBackground: '#101010',
+  blackListActiveSelectionBackground: '#161616',
+  // Black Soft
+  blackSoftListHoverBackground: '#202020',
+  blackSoftListInactiveSelectionBackground: '#262626',
+  blackSoftListActiveSelectionBackground: '#2a2a2a',
+  // GitHub
+  githubListHoverBackground: '#f3f4f6',
+  githubListInactiveSelectionBackground: '#e8eaed',
+  githubListActiveSelectionBackground: '#dfe1e5',
 } satisfies Record<string, [string, string] | string>
 
 // GitHub Light theme colors (from GitHub Primer)
